@@ -27,11 +27,11 @@ public class ShoppingList
 		return itemName;
 	}
 	@JsonProperty
-	public double getItemPrice() {
+	public Double getItemPrice() {
 		return itemPrice;
 	}
 	@JsonProperty
-	public int getItemQuantity() {
+	public Integer getItemQuantity() {
 		return itemQuantity;
 	}
 	

@@ -8,6 +8,16 @@ import java.util.List;
 public class ShoppingListDB {
 	private static Map<Integer,ShoppingList> shoppingList=new HashMap<Integer,ShoppingList>();
 	
+	final static String ERROR_EMPTY_BODY="Please add item details !!";
+	final static String ERROR_EMPTY_NAME="Please provide the item name !!";
+	final static String ERROR_EMPTY_PRICE="Please provide the item price !!";
+	final static String ERROR_EMPTY_QUANTIY="Please provide the item quantity !!";
+	final static String SUCCESS_DELETED="Item Deleted Succesfully";
+	final static String SUCCESS_CREATED="Item Created Succesfully";
+	final static String SUCCESS_UPDATED="Item Updated Succesfully";
+	final static String ERROR_ALREADY_EXISTS="Item Already Exists";
+	final static String ERROR_DOES_NOT_EXISTS="Item Does Not Exists";
+	
 	static {
 		shoppingList.put(1, new ShoppingList(1, "item1", 100.0, 2));
 		shoppingList.put(2, new ShoppingList(2, "item2", 56.6, 3));
@@ -32,20 +42,29 @@ public class ShoppingListDB {
         return shoppingList.size();
     }
 	
-	public static void remove() {
-        if (!shoppingList.keySet().isEmpty()) {
-        	shoppingList.remove(shoppingList.keySet().toArray()[0]);
-        }
+	public static boolean remove(int id) {
+		if (shoppingList.get(id) != null) {
+			shoppingList.remove(id);
+			return true;
+		}
+        return false;
     }
 	
-	public static String save(ShoppingList list) {
-        String result = "";
-        if (shoppingList.get(list.getItemId()) != null) {
-            result = "Updated List with id=" + list.getItemId();
-        } else {
-            result = "Added List with id=" + list.getItemId();
-        }
-        shoppingList.put(list.getItemId(), list);
-        return result;
+	public static boolean create(ShoppingList list) {
+		if (shoppingList.get(list.getItemId()) == null) {
+			shoppingList.put(list.getItemId(), list);
+			return true;
+		}
+		
+        return false;
+    }
+	
+	public static boolean update(ShoppingList list) {
+		if (shoppingList.get(list.getItemId()) != null) {
+			shoppingList.put(list.getItemId(), list);
+			return true;
+		}
+        
+        return false;
     }
 }

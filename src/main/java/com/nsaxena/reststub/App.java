@@ -1,13 +1,18 @@
 package com.nsaxena.reststub;
 
+import io.dropwizard.Application;
+import io.dropwizard.setup.Environment;
+
 /**
  * Hello world!
  *
  */
-public class App 
+public class App extends Application<SimpleRestConfiguration>
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+
+	@Override
+	public void run(SimpleRestConfiguration arg0, Environment arg1) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 }

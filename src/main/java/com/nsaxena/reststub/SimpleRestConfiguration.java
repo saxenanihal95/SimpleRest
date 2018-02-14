@@ -1,5 +1,7 @@
 package com.nsaxena.reststub;
 
-public class SimpleRestConfiguration {
+import io.dropwizard.Configuration;
+
+public class SimpleRestConfiguration extends Configuration{
 
 }

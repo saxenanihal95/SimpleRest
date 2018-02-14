@@ -1,1 +1,6 @@
+com\nsaxena\reststub\ShoppingList.class
+com\nsaxena\reststub\ShoppingListDB.class
+com\nsaxena\reststub\SimpleRestConfiguration.class
+com\nsaxena\reststub\ShoppingListService.class
+com\nsaxena\reststub\ShoppingListService$1.class
 com\nsaxena\reststub\App.class

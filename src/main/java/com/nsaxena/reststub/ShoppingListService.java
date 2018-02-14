@@ -52,7 +52,7 @@ public class ShoppingListService {
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response addEmployee( ShoppingList item ) throws URISyntaxException
+	public Response addItem( ShoppingList item ) throws URISyntaxException
 	{
 	    if(item == null){
 	        return Response.status(400).entity(ShoppingListDB.ERROR_EMPTY_BODY).build();
@@ -79,7 +79,7 @@ public class ShoppingListService {
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response updateEmployeeById(@PathParam("id") Integer id, ShoppingList item)
+	public Response updateItemById(@PathParam("id") Integer id, ShoppingList item)
 	{
 	     
 		if(item == null){
@@ -106,7 +106,7 @@ public class ShoppingListService {
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response deleteEmployeeById(@PathParam("id") Integer id)
+	public Response deleteItemById(@PathParam("id") Integer id)
 	{
 	     
 	    boolean deletedItem=ShoppingListDB.remove(id); 

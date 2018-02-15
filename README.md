@@ -1,34 +1,18 @@
 # SimpleRest
 simple rest api for shopping list
 
-Overview
+REST ENDPOINTS :
 
-parameters:
+method	path          description				                    body parameters(JSON) 
 
-itemId itemName itemPrice itemQuantiy
+GET     items/all     return all the items in the list	    --------------------------------------
 
-GET /items
+GET	    items/{id}	  return item with specific id		      --------------------------------------
 
-returns all the items
+POST	  items		      create item of given id and gives	    itemId,itemName,itemPrice,itemQuantity
+			                error if the item exists
 
+PUT	    items/{id}	  update item of given id and gives	    itemName,itemPrice,itemQuantity
+			                error if the item does not exists
 
-GET /item/{id}
-/item/{id}
-
-return item of given id
-
-
-POST /item
-/item
-
-create an item
-
-PUT /item/{id}
-/item/{id}
-
-update item of given id
-
-DELETE /item/{id}
-/item/{id}
-
-delete item of given id
+DELETE 	items/{id}	  delete item of given id			          ---------------------------------------
